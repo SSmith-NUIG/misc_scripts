@@ -82,7 +82,7 @@ def  how_much_to_take(dataframe):
     dataframe.index= np.arange(1,(len(dataframe)+1))
     dataframe["Sample Number"] = dataframe.index
 
-    headers= ["Pool Number","Volume (microL)","Concentration (ng/microL)","Total DNA (ng)","Inverse Concentration","Sample Number","Volume in pool (microL)","DNA Contributed (ng)"]
+    headers= ["Pool Number","Volume (microL)","Concentration (ng/microL)","TotalDNA (ng)","Inverse Concentration","Sample Number","Volume in pool (microL)","DNA Contributed (ng)"]
 
     print(dataframe[headers])
     print("Saving output to file: %s" % options.outfile[0])
@@ -91,3 +91,4 @@ def  how_much_to_take(dataframe):
 
 df = pd.read_csv(options.file[0])
 how_much_to_take(df)
+
