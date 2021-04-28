@@ -10,7 +10,6 @@ def pexactfrsd_2parts(d,k1,n1,k2,n2):
     return result
 
 def part1(d,k,n):
-    yes = 0
     result = 0
     sum2 = 0
     for h in range(0, n+1):
@@ -20,16 +19,12 @@ def part1(d,k,n):
             for j in range(0, h+1):
                 #print(f'K:{k}, i:{i}, j:{j}, d:{d}, h:{h}')
                 if ((k*(i-j))-d-h) >= 0:
-                    yes = yes + 1
-                    print(yes)
-                    #print(binomial((k*(i-j)-d+(h-1)), (k*(i-j)-d-h)))
                     sum2 = sum2 + ((-1)**(i-j)) * (comb(h,i)) * (comb(h,j)) * (binomial((k*(i-j)-d+(h-1)), (k*(i-j)-d-h)))
         result = result + (sum1 * sum2)
     return result
 
 
 def part2(d,k,n):
-    yes = 0
     result = 0
     sum2 = 0
     for h in range(0, n+1):
@@ -39,8 +34,6 @@ def part2(d,k,n):
             for j in range(0, h+1):
                 #print(f'K:{k}, i:{i}, j:{j}, d:{d}, h:{h}')
                 if ((k*(i-j))-d-h) >= 0:
-                    yes = yes + 1
-                    print(yes)
                     sum2 = sum2 + ((-1)**(i-j)) * (comb(h,i)) * (comb(h,j)) * (comb((k*(i-j)-d+h), (k*(i-j)-d-h)))
         result = result + (sum1 * sum2)
     return (2 * result)
