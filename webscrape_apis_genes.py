@@ -14,9 +14,8 @@ for i in range(1,104):
     driver.implicitly_wait(5)
     soup = BeautifulSoup(driver.page_source,'lxml')
     tables = soup.find_all('table')
-    df1 = pd.read_html(str(tables))
-    df2 = pd.DataFrame(df1[0])
-    dfs.append(df2)
+    df = pd.read_html(str(tables)
+    dfs.append(pd.DataFrame(df[0])
 
 combined = pd.concat(dfs)
 combined.reset_index(inplace=True)
