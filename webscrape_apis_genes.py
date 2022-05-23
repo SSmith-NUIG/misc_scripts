@@ -5,7 +5,7 @@ import pandas as pd
 opts = Options()
 opts.headless = True
 assert opts.headless  # Operating in headless mode
-driver = webdriver.Firefox(executable_path=r'/home/stephen/Downloads/geckodriver-v0.31.0-linux64/geckodriver')
+driver = webdriver.Firefox(executable_path=r'geckodriver-v0.31.0-linux64/geckodriver')
 
 dfs = []
 for i in range(1,104):
@@ -21,4 +21,4 @@ for i in range(1,104):
 combined = pd.concat(dfs)
 combined.reset_index(inplace=True)
 combined.drop("index", inplace=True, axis=1)
-combined.to_csv("/home/stephen/genes_to_fullname.csv", sep=",", index=False)
+combined.to_csv("genes_to_fullname.csv", sep=",", index=False)
